@@ -1,0 +1,23 @@
+{
+  "name": "smriti",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Smriti notes and alarm reminders for Android",
+  "scripts": {
+    "build": "node scripts/build-web.cjs",
+    "android:add": "npm run build && cap add android",
+    "android:sync": "npm run build && cap sync android",
+    "android:open": "cap open android"
+  },
+  "dependencies": {
+    "@capacitor/core": "8.5.2"
+  },
+  "devDependencies": {
+    "@capacitor/android": "8.5.2",
+    "@capacitor/cli": "8.5.2",
+    "esbuild": "0.28.2"
+  },
+  "overrides": {
+    "uuid": "11.1.1"
+  }
+}
