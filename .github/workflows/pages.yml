@@ -27,8 +27,12 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Prepare static website
         run: |
-          mkdir _site
+          mkdir -p _site
           cp index.html _site/index.html
+          cp script.js _site/script.js
+          cp style.css _site/style.css
+          cp mobile-bridge.js _site/mobile-bridge.js
+          if [ -d www ]; then cp -r www _site/www; fi
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
