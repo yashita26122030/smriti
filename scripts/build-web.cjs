@@ -8,6 +8,7 @@ const webDir = path.join(root, 'www');
 async function main() {
   fs.mkdirSync(webDir, { recursive: true });
   fs.copyFileSync(path.join(root, 'index.html'), path.join(webDir, 'index.html'));
+  fs.cpSync(path.join(root, 'assets'), path.join(webDir, 'assets'), { recursive: true });
   await build({
     entryPoints: [path.join(root, 'mobile-bridge.js')],
     outfile: path.join(webDir, 'mobile-bridge.js'),

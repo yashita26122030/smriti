@@ -32,6 +32,7 @@ jobs:
           cp script.js _site/script.js
           cp style.css _site/style.css
           cp mobile-bridge.js _site/mobile-bridge.js
+          cp -r assets _site/assets
           if [ -d www ]; then cp -r www _site/www; fi
       - name: Upload website
         uses: actions/upload-pages-artifact@v3

@@ -18,20 +18,101 @@
   --shadow:0 12px 34px -14px rgba(30,80,170,.38),inset 0 1px 0 rgba(255,255,255,.95);
   --serif:'Fraunces',Georgia,serif; --sans:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
+body[data-theme="light"]{
+  --ink:#263449; --ink-soft:rgba(38,52,73,.68); --line:rgba(90,112,143,.2); --glass:rgba(255,255,255,.58); --glass-hi:rgba(255,255,255,.86); --base:rgba(255,255,255,.48);
+  --blue:#6c9df3; --blue-deep:#416ec2; --cyan:#a6c9ff; --shadow:0 12px 34px -14px rgba(59,82,117,.22),inset 0 1px 0 rgba(255,255,255,.95);
+  background:linear-gradient(145deg,#f8fafc 0%,#e9eff6 55%,#dce7f2 100%) fixed; color-scheme:light;
+}
+body[data-theme="dark"]{
+  --ink:#edf2fb; --ink-soft:rgba(226,234,247,.72); --line:rgba(180,199,229,.2); --glass:rgba(35,45,62,.72); --glass-hi:rgba(44,56,76,.9); --base:rgba(42,54,73,.8);
+  --blue:#9bbcff; --blue-deep:#aecaff; --cyan:#77a9f4; --shadow:0 14px 36px -14px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.12);
+  background:linear-gradient(145deg,#121722 0%,#1c2636 55%,#263247 100%) fixed; color-scheme:dark;
+}
+body[data-theme="flower"]{
+  --ink:#523549; --ink-soft:rgba(82,53,73,.72); --line:rgba(172,110,147,.23); --glass:rgba(255,247,251,.62); --glass-hi:rgba(255,252,254,.88); --base:rgba(255,255,255,.48);
+  --blue:#d783ae; --blue-deep:#a84f7e; --cyan:#f0a9cb; --shadow:0 12px 34px -14px rgba(131,65,105,.28),inset 0 1px 0 rgba(255,255,255,.95);
+  background:linear-gradient(145deg,#fff0f6 0%,#f8e4ef 48%,#e9d9f0 100%) fixed; color-scheme:light;
+}
+body[data-theme="flower"]::before{
+  background:
+    radial-gradient(ellipse at 12% 20%,rgba(255,255,255,.72) 0 2%,transparent 2.5%),
+    radial-gradient(ellipse at 14% 18%,rgba(255,183,211,.48) 0 7%,transparent 7.5%),
+    radial-gradient(ellipse at 82% 75%,rgba(255,255,255,.72) 0 2%,transparent 2.5%),
+    radial-gradient(ellipse at 84% 73%,rgba(224,170,218,.42) 0 8%,transparent 8.5%),
+    radial-gradient(480px 480px at 10% 12%,rgba(255,255,255,.24),transparent 70%);
+}
+body[data-theme="night-sky"]{
+  --ink:#edf1ff; --ink-soft:rgba(218,226,255,.74); --line:rgba(167,182,255,.22); --glass:rgba(27,34,70,.72); --glass-hi:rgba(39,47,87,.9); --base:rgba(38,47,84,.82);
+  --blue:#a5b8ff; --blue-deep:#bdcaff; --cyan:#8ea3ff; --shadow:0 14px 36px -14px rgba(12,16,55,.62),inset 0 1px 0 rgba(255,255,255,.13);
+  background:linear-gradient(155deg,#10132e 0%,#1c2452 55%,#34396f 100%) fixed; color-scheme:dark;
+}
+body[data-theme="night-sky"]::before{
+  background:
+    radial-gradient(2px 2px at 12% 18%,rgba(255,255,255,.9) 50%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 28% 68%,rgba(213,224,255,.88) 50%,transparent 100%),
+    radial-gradient(2px 2px at 47% 28%,rgba(255,255,255,.82) 50%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 63% 82%,rgba(213,224,255,.8) 50%,transparent 100%),
+    radial-gradient(2px 2px at 78% 16%,rgba(255,255,255,.9) 50%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 91% 53%,rgba(213,224,255,.8) 50%,transparent 100%),
+    radial-gradient(560px 520px at 90% 18%,rgba(144,157,255,.1),transparent 70%);
+}
+body[data-theme="day-sky"]{
+  --ink:#20445e; --ink-soft:rgba(32,68,94,.72); --line:rgba(59,137,184,.22); --glass:rgba(240,250,255,.58); --glass-hi:rgba(250,254,255,.87); --base:rgba(255,255,255,.48);
+  --blue:#50a9df; --blue-deep:#247aa9; --cyan:#80d3f4; --shadow:0 12px 34px -14px rgba(38,111,153,.28),inset 0 1px 0 rgba(255,255,255,.95);
+  background:linear-gradient(160deg,#92d8fa 0%,#c7edff 48%,#fff0cf 100%) fixed; color-scheme:light;
+}
+body[data-theme="day-sky"]::before{
+  background:
+    radial-gradient(ellipse 170px 48px at 18% 22%,rgba(255,255,255,.52),transparent 72%),
+    radial-gradient(ellipse 210px 58px at 82% 38%,rgba(255,255,255,.44),transparent 72%),
+    radial-gradient(ellipse 240px 65px at 57% 88%,rgba(255,255,255,.3),transparent 72%);
+}
 *{box-sizing:border-box}
 body{margin:0;min-height:100vh;font-family:var(--sans);color:var(--ink);line-height:1.6;
-  background:linear-gradient(140deg,#e4f3ff 0%,#c4e2ff 48%,#a3d3fb 100%) fixed;color-scheme:light}
+  background:linear-gradient(140deg,#f8fafc 0%,#e9eff6 48%,#dce7f2 100%) fixed;color-scheme:light}
 body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:radial-gradient(480px 480px at 10% 12%,rgba(255,255,255,.95),transparent 70%),
-             radial-gradient(560px 520px at 90% 18%,rgba(147,197,253,.65),transparent 70%),
-             radial-gradient(620px 520px at 65% 100%,rgba(125,211,252,.6),transparent 70%),
-             radial-gradient(420px 420px at 0% 90%,rgba(165,180,252,.45),transparent 70%)}
+  background:radial-gradient(480px 480px at 10% 12%,rgba(255,255,255,.16),transparent 70%),
+             radial-gradient(560px 520px at 90% 18%,rgba(255,255,255,.08),transparent 70%),
+             radial-gradient(620px 520px at 65% 100%,rgba(255,255,255,.06),transparent 70%),
+             radial-gradient(420px 420px at 0% 90%,rgba(255,255,255,.06),transparent 70%)}
 button,input,textarea,select{font:inherit;color:inherit}
 select option{color:#0f2a5c;background:#fff}
+body[data-theme="dark"] select option,body[data-theme="night-sky"] select option{color:#edf2fb;background:#263247}
+body[data-theme="dark"] .auth-form input,body[data-theme="dark"] .password-form input,body[data-theme="dark"] .field,
+body[data-theme="night-sky"] .auth-form input,body[data-theme="night-sky"] .password-form input,body[data-theme="night-sky"] .field{
+  background:rgba(15,20,34,.52);color:var(--ink)
+}
+body[data-theme="dark"] .badge,body[data-theme="night-sky"] .badge{
+  background:rgba(15,20,34,.58);border-color:var(--line);color:var(--ink)
+}
+body[data-theme="dark"] .top h1,body[data-theme="night-sky"] .top h1{text-shadow:0 1px 14px rgba(0,0,0,.3)}
 :focus-visible{outline:2px solid var(--blue-deep);outline-offset:2px}
 svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
 
 .app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+[hidden]{display:none!important}
+.auth-screen{min-height:100vh;display:grid;place-items:center;padding:24px}
+.auth-card{width:min(440px,100%);padding:34px;border:1px solid rgba(255,255,255,.85);border-radius:30px;background:var(--glass-hi);box-shadow:var(--shadow);backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px)}
+.auth-brand{font-family:var(--serif);font-size:2.4rem;text-align:center}
+.auth-card>p{text-align:center;color:var(--ink-soft);margin:4px 0 22px}
+.auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:5px;border-radius:999px;background:var(--glass);margin-bottom:20px}
+.auth-tabs button{border:0;border-radius:999px;background:transparent;padding:9px;cursor:pointer;color:var(--ink-soft);font-weight:600}
+.auth-tabs button[aria-selected="true"]{background:var(--glass-hi);color:var(--ink);box-shadow:var(--shadow)}
+.auth-form label,.password-form label{display:grid;gap:6px;margin:14px 0;color:var(--ink-soft);font-size:.9rem}
+.auth-form input,.password-form input{width:100%;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.55);padding:12px 14px}
+.auth-form .btn,.password-form .btn{width:100%;margin-top:8px}
+.auth-link{display:block;margin:8px auto 0;padding:4px 8px;border:0;background:transparent;color:var(--blue-deep);text-decoration:underline;cursor:pointer}
+.auth-reset-warning{padding:12px;border:1px solid rgba(168,50,50,.22);border-radius:12px;background:rgba(168,50,50,.06);color:var(--ink-soft);font-size:.86rem}
+.auth-message{min-height:1.5em;margin:10px 0 0!important;color:#a83232!important;font-size:.9rem}
+.local-note{text-align:left!important;font-size:.8rem;margin:16px 0 0!important}
+.account-box{margin-top:auto;padding:14px;border:1px solid var(--line);border-radius:18px;background:var(--glass)}
+.account-name{font-weight:600;overflow-wrap:anywhere}
+.account-email{font-size:.78rem;color:var(--ink-soft);overflow-wrap:anywhere}
+.account-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.account-actions button{padding:7px 11px;font-size:.8rem}
+.password-card{width:min(440px,100%);padding:28px;border:1px solid rgba(255,255,255,.9);border-radius:26px;background:var(--glass-hi);box-shadow:var(--shadow)}
+.password-card h2{font-family:var(--serif);font-weight:400;margin:0 0 8px}
+.password-card>p{color:var(--ink-soft);font-size:.84rem}
 aside{position:sticky;top:0;height:100vh;padding:26px 18px;display:flex;flex-direction:column;gap:26px;
   background:var(--glass);backdrop-filter:blur(26px) saturate(150%);-webkit-backdrop-filter:blur(26px) saturate(150%);
   border-right:1px solid var(--line);box-shadow:inset -1px 0 0 rgba(255,255,255,.7)}
@@ -67,6 +148,10 @@ main{padding:46px clamp(20px,4vw,56px) 80px;max-width:1040px;width:100%}
 .note:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.95)}
 .note h3{font-family:var(--serif);font-weight:500;font-size:1.15rem;margin:0 0 6px;line-height:1.3}
 .note p{margin:0;white-space:pre-wrap;word-break:break-word}
+.magnifier{display:none;position:fixed;z-index:60;width:124px;height:94px;align-items:center;justify-content:center;padding:12px 8px;border:3px solid rgba(255,255,255,.9);border-radius:50%;background:rgba(255,255,255,.16);box-shadow:0 5px 22px rgba(14,47,86,.2),inset 0 0 0 2px var(--blue-deep);color:var(--ink);font-size:1.55rem;font-weight:700;line-height:1.15;text-align:center;overflow:hidden;pointer-events:none;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.magnifier::after{content:"";position:absolute;width:12px;height:34px;right:2px;bottom:-22px;border-radius:8px;background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.85);box-shadow:0 2px 8px rgba(14,47,86,.18);transform:rotate(-38deg);transform-origin:top center}
+.magnifier.show{display:flex}
+body.magnifying,.magnifying .note h3,.magnifying .note p{-webkit-user-select:none;user-select:none}
 .meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px}
 .badge{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;padding:4px 11px;border-radius:999px;background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.9);color:var(--ink)}
 .badge.done{opacity:.65}
@@ -101,6 +186,18 @@ main{padding:46px clamp(20px,4vw,56px) 80px;max-width:1040px;width:100%}
 ::placeholder{color:var(--ink-soft);opacity:.75}
 .label{display:block;font-size:.85rem;color:var(--ink-soft);margin:18px 0 8px}
 .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.voice-controls{display:flex;align-items:center;gap:12px;margin-top:8px;flex-wrap:wrap}
+.voice-language{display:grid;gap:4px;font-size:.82rem;color:var(--ink-soft)}
+.voice-language .field{width:140px}
+.voice-language small{font-size:.75rem}
+.ic.voice-active{background:rgba(37,99,235,.14);color:var(--blue-deep)}
+.dashboard-controls{display:grid;gap:4px;align-items:start;min-width:145px}
+.dashboard-controls .field{width:100%;min-width:145px}
+.template-row{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:4px}
+.template-field{display:grid;gap:6px;min-width:min(260px,100%);margin-left:auto}
+.template-field .field{width:100%;min-width:180px}
+.list-tools{display:flex;gap:8px;margin:8px 0 4px}
+.reminder-fields[hidden]{display:none}
 .chip{border:1px solid var(--line);background:var(--glass);color:var(--ink);padding:7px 14px;border-radius:999px;font-size:.88rem;cursor:pointer;transition:background .2s}
 .chip:hover{background:var(--glass-hi)} .chip.on{background:linear-gradient(135deg,#60a5fa,#2563eb);border-color:rgba(255,255,255,.4);color:#fff}
 .field{border:1px solid var(--line);background:var(--glass);border-radius:12px;padding:8px 12px;font-size:.92rem}
@@ -126,13 +223,17 @@ main{padding:46px clamp(20px,4vw,56px) 80px;max-width:1040px;width:100%}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 
 @media (max-width:820px){
+  .auth-card{padding:28px 22px}
   .app{display:block}
   aside{position:fixed;inset:auto 0 0 0;height:auto;z-index:20;flex-direction:row;padding:8px 10px calc(8px + env(safe-area-inset-bottom));border-right:0;border-top:1px solid var(--line);gap:0}
   .brand,.newbtn,.side-tip{display:none}
   .nav{flex-direction:row;width:100%;justify-content:space-around}
   .nav a{flex-direction:column;gap:2px;padding:6px 10px;font-size:.72rem;position:relative}
   .nav em{position:absolute;top:0;right:2px;margin:0;font-size:.65rem;padding:0 6px}
-  main{padding:30px 18px 120px}
+  .account-box{position:fixed;top:8px;right:8px;z-index:25;width:auto;max-width:calc(100% - 16px);margin:0;padding:7px 10px;display:flex;align-items:center;gap:10px;background:var(--glass-hi)}
+  .account-actions{margin:0}
+  .account-actions button{padding:6px 9px}
+  main{padding:76px 18px 120px}
   .top h1{font-size:2rem} .search{margin-left:0;width:100%} .search input{width:100%}
   .rem{grid-template-columns:1fr;gap:4px} .when{text-align:left;padding:0;display:flex;gap:8px;align-items:baseline}
   .fab{display:grid;place-items:center;position:fixed;right:20px;bottom:86px;width:56px;height:56px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:linear-gradient(135deg,#60a5fa,#2563eb);color:#fff;box-shadow:var(--shadow);z-index:20;cursor:pointer}
@@ -141,47 +242,146 @@ main{padding:46px clamp(20px,4vw,56px) 80px;max-width:1040px;width:100%}
 </style>
 </head>
 <body>
-<div class="app">
+<section class="auth-screen" id="authScreen" aria-labelledby="authHeading">
+  <div class="auth-card">
+    <h1 class="auth-brand" id="authHeading">Smriti</h1>
+    <p>Your thoughts, safe on this device.</p>
+    <div class="auth-tabs" role="tablist" aria-label="Account access">
+      <button type="button" id="loginTab" role="tab" aria-selected="true">Sign in</button>
+      <button type="button" id="signupTab" role="tab" aria-selected="false">Create account</button>
+    </div>
+    <form class="auth-form" id="authForm">
+      <label id="authNameGroup" hidden>Name
+        <input id="authName" name="name" autocomplete="name" maxlength="80">
+      </label>
+      <label>Email
+        <input id="authEmail" name="email" type="email" autocomplete="username" maxlength="254" required>
+      </label>
+      <label>Password
+        <input id="authPassword" name="password" type="password" autocomplete="current-password" required>
+      </label>
+      <label id="authConfirmGroup" hidden>Confirm password
+        <input id="authConfirm" name="confirmPassword" type="password" autocomplete="new-password">
+      </label>
+      <button class="btn" id="authSubmit" type="submit">Sign in</button>
+      <button class="auth-link" id="forgotPassword" type="button">Forgot password?</button>
+      <p class="auth-message" id="authMessage" role="alert" aria-live="polite"></p>
+    </form>
+    <form class="auth-form" id="resetPasswordForm" hidden>
+      <p class="auth-reset-warning">Resetting your password permanently deletes this account’s encrypted notes. They cannot be recovered without the old password.</p>
+      <label>Email
+        <input id="resetEmail" type="email" autocomplete="username" maxlength="254" required>
+      </label>
+      <label>New password
+        <input id="resetNewPassword" type="password" autocomplete="new-password" minlength="8" required>
+      </label>
+      <label>Confirm new password
+        <input id="resetConfirmPassword" type="password" autocomplete="new-password" minlength="8" required>
+      </label>
+      <button class="btn" id="resetPasswordSubmit" type="submit">Delete notes and reset password</button>
+      <button class="auth-link" id="cancelPasswordReset" type="button">Back to sign in</button>
+      <p class="auth-message" id="resetPasswordMessage" role="alert" aria-live="polite"></p>
+    </form>
+    <p class="local-note">Your account and encrypted notes stay on this device and do not sync. Keep your password safe.</p>
+  </div>
+</section>
+<div class="app" id="app" hidden>
   <aside>
     <div class="brand"><b>Smriti</b></div>
     <nav class="nav" id="nav" aria-label="Pages"></nav>
     <button class="btn newbtn" id="newBtn"></button>
     <p class="side-tip">Keep this tab open so reminders can reach you.</p>
+    <section class="account-box" aria-label="Signed-in account">
+      <div><div class="account-name" id="accountName"></div><div class="account-email" id="accountEmail"></div></div>
+      <div class="account-actions">
+        <button class="btn quiet" id="changePassword" type="button">Password</button>
+        <button class="btn quiet" id="signOut" type="button">Sign out</button>
+      </div>
+    </section>
   </aside>
   <main>
     <div class="top">
       <div><h1 id="pgTitle"></h1><p id="pgSub"></p></div>
       <label class="search"><span id="srIcon"></span><input id="search" type="search" placeholder="Search" aria-label="Search notes"></label>
+      <label class="dashboard-controls">
+        <span class="label" style="margin:0;">Dashboard style</span>
+        <select id="themePicker" class="field" aria-label="Choose dashboard style"></select>
+      </label>
     </div>
     <div id="view"></div>
   </main>
 </div>
 <button class="fab" id="fab" aria-label="New note"></button>
 
+<div class="overlay" id="passwordOverlay">
+  <section class="password-card" role="dialog" aria-modal="true" aria-labelledby="passwordHeading">
+    <h2 id="passwordHeading">Change password</h2>
+    <p>Choose a new password with at least 8 characters. If you forget it, reset it from the sign-in screen; resetting permanently deletes your encrypted notes.</p>
+    <form class="password-form" id="passwordForm">
+      <label>Current password
+        <input id="currentPassword" type="password" autocomplete="current-password" required>
+      </label>
+      <label>New password
+        <input id="newPassword" type="password" autocomplete="new-password" minlength="8" required>
+      </label>
+      <label>Confirm new password
+        <input id="confirmNewPassword" type="password" autocomplete="new-password" minlength="8" required>
+      </label>
+      <p class="auth-message" id="passwordMessage" role="alert" aria-live="polite"></p>
+      <div class="foot">
+        <button class="btn quiet" id="cancelPassword" type="button">Cancel</button>
+        <button class="btn" type="submit">Save password</button>
+      </div>
+    </form>
+  </section>
+</div>
+
 <div class="overlay" id="composer">
   <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Note">
     <input id="title" class="title" placeholder="Title" maxlength="80">
+    <div class="list-tools" role="group" aria-label="Note list formatting">
+      <button class="chip" id="bulletList" type="button" title="Add bullet list">• Bullet</button>
+      <button class="chip" id="checklistList" type="button" title="Add checklist">☐ Checklist</button>
+    </div>
     <textarea id="body" class="body" placeholder="What would you like to remember?"></textarea>
+    <div class="template-row">
+      <span class="label" style="margin:0;">Templates</span>
+      <label class="template-field">
+        <select id="templateSelect" class="field" aria-label="Choose a note template">
+          <option value="">Custom note</option>
+        </select>
+      </label>
+    </div>
+    <div class="voice-controls">
+      <button class="ic" id="voiceInput" type="button" aria-label="Start voice input" aria-pressed="false" title="Start voice input"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5m-4 0h8"/></svg></button>
+      <label class="voice-language">Voice language
+        <select id="speechLanguage" class="field" aria-label="Speech recognition language"></select>
+        <small>Choose a language supported by your browser.</small>
+      </label>
+      <span id="voiceStatus" role="status" aria-live="polite"></span>
+    </div>
     <span class="label">Colour</span>
     <div class="dots" id="dots"></div>
-    <span class="label">Remind me</span>
-    <div class="row">
-      <button class="chip" data-in="10">In 10 minutes</button>
-      <button class="chip" data-in="60">In 1 hour</button>
-      <button class="chip" data-when="evening">This evening</button>
-      <button class="chip" data-when="tomorrow">Tomorrow morning</button>
-    </div>
-    <div class="row" style="margin-top:10px">
-      <input id="when" type="datetime-local" class="field" aria-label="Reminder time">
-      <select id="sound" class="field" aria-label="Alarm sound">
-        <option value="alarm">Classic alarm</option><option value="chime">Soft chime</option><option value="bell">Temple bell</option>
-        <option value="drops">Water drops</option><option value="silent">Silent</option>
-      </select>
-      <button class="chip" id="preview">Listen</button>
-      <button class="chip" id="clearWhen">No reminder</button>
+    <div class="reminder-fields" id="reminderFields" hidden>
+      <span class="label">Reminder time</span>
+      <div class="row">
+        <button class="chip" data-in="10">In 10 minutes</button>
+        <button class="chip" data-in="60">In 1 hour</button>
+        <button class="chip" data-when="evening">This evening</button>
+        <button class="chip" data-when="tomorrow">Tomorrow morning</button>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <input id="when" type="datetime-local" class="field" aria-label="Reminder time">
+        <select id="sound" class="field" aria-label="Alarm sound">
+          <option value="alarm">Classic alarm</option><option value="chime">Soft chime</option><option value="bell">Temple bell</option>
+          <option value="drops">Water drops</option><option value="silent">Silent</option>
+        </select>
+        <button class="chip" id="preview">Listen</button>
+        <button class="chip" id="clearWhen">No reminder</button>
+      </div>
+      <p class="hint" id="permHint"></p>
     </div>
     <div class="row" style="margin-top:14px"><button class="chip" id="pinChip">Pin this note</button></div>
-    <p class="hint" id="permHint"></p>
     <div class="foot"><button class="btn quiet" id="cancel">Cancel</button><button class="btn" id="save">Save note</button></div>
   </div>
 </div>
@@ -198,6 +398,7 @@ main{padding:46px clamp(20px,4vw,56px) 80px;max-width:1040px;width:100%}
   </div>
 </div>
 <div class="toast" id="toast" role="status"></div>
+<div class="magnifier" id="magnifier" aria-hidden="true"></div>
 
 <script>
 const $ = s => document.querySelector(s);
@@ -221,11 +422,221 @@ const VIEWS = {
   reminders:{t:'Reminders',s:'What Smriti will bring back to you.',i:'bell'},
   archive:{t:'Archive',s:'Put away, never lost.',i:'archive'}
 };
+const THEMES = [
+  {id:'light', label:'Light', swatch:'#6c9df3'},
+  {id:'dark', label:'Dark', swatch:'#596982'},
+  {id:'flower', label:'Flower', swatch:'#d783ae'},
+  {id:'night-sky', label:'Night sky', swatch:'#555da5'},
+  {id:'day-sky', label:'Day sky', swatch:'#50a9df'}
+];
+const NOTE_TEMPLATES = [
+  {id:'quick', label:'Quick note', title:'', body:'• '},
+  {id:'checklist', label:'Checklist', title:'Today', body:'- [ ] '},
+  {id:'ideas', label:'Ideas', title:'Idea', body:'Concept:\n- \nWhy it matters:\n- '},
+  {id:'meeting', label:'Meeting', title:'Meeting notes', body:'Agenda:\n- \nKey notes:\n- \nNext steps:\n- '},
+  {id:'journal', label:'Journal', title:'Journal', body:'Today I felt...\n\nWhat went well:\n- \nWhat I want to improve:\n- '},
+  {id:'ocean', label:'Ocean', title:'Ocean day', body:'Ocean mood:\n- \nWhat I noticed:\n- \nWhat I want to carry forward:\n- '},
+  {id:'nature', label:'Nature', title:'Nature walk', body:'Place:\n- \nSounds I heard:\n- \nColors I noticed:\n- \nFeelings:\n- '},
+  {id:'travel', label:'Travel', title:'Travel plan', body:'Destination:\n- \nMust do:\n- \nPacking list:\n- \nBudget:\n- '},
+  {id:'gratitude', label:'Gratitude', title:'Gratitude', body:'Today I am grateful for:\n- \nWhy it matters:\n- \nHow I can keep this feeling:\n- '},
+  {id:'routine', label:'Routine', title:'Daily routine', body:'Morning:\n- \nFocus block:\n- \nAfternoon:\n- \nEvening:\n- '}
+];
 const COLORS = ['none','sage','sky','lilac','peach','rose'];
 const KEY = 'smriti.notes.v1';
+const THEME_KEY = 'smriti.theme.v1';
+const USERS_KEY = 'smriti.users.v1';
+const SESSION_DB = 'smriti.session.v1';
+const SESSION_STORE = 'session';
+const PASSWORD_ITERATIONS = 210000;
+const normalizeEmail = email => email.trim().toLowerCase();
+const accountAlarmPrefix = () => `${activeAccount.email}:`;
+const accountAlarmId = id => `${accountAlarmPrefix()}${id}`;
+const toHex = bytes => Array.from(bytes, byte => byte.toString(16).padStart(2,'0')).join('');
+const fromHex = value => {
+  if (typeof value !== 'string' || !/^(?:[0-9a-f]{2})+$/i.test(value)) throw new Error('Saved account data is invalid.');
+  return new Uint8Array(value.match(/.{2}/g).map(byte => parseInt(byte,16)));
+};
+function safeReadStorage(key){
+  try {
+    return localStorage.getItem(key);
+  } catch (error) {
+    return null;
+  }
+}
+function safeWriteStorage(key,value){
+  try {
+    localStorage.setItem(key, value);
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+function openSessionDatabase(){
+  return new Promise((resolve,reject) => {
+    if (!window.indexedDB) {
+      reject(new Error('Persistent sign-in is not supported by this browser.'));
+      return;
+    }
+    const request = indexedDB.open(SESSION_DB,1);
+    request.onupgradeneeded = () => {
+      if (!request.result.objectStoreNames.contains(SESSION_STORE)) {
+        request.result.createObjectStore(SESSION_STORE);
+      }
+    };
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error || new Error('Could not open sign-in storage.'));
+  });
+}
+async function readRememberedSession(){
+  const database = await openSessionDatabase();
+  return new Promise((resolve,reject) => {
+    const transaction = database.transaction(SESSION_STORE,'readonly');
+    const request = transaction.objectStore(SESSION_STORE).get('active');
+    request.onsuccess = () => resolve(request.result || null);
+    request.onerror = () => reject(request.error || new Error('Could not read the saved sign-in.'));
+    transaction.oncomplete = () => database.close();
+    transaction.onerror = () => {
+      database.close();
+      reject(transaction.error || new Error('Could not read the saved sign-in.'));
+    };
+    transaction.onabort = () => {
+      database.close();
+      reject(transaction.error || new Error('Could not read the saved sign-in.'));
+    };
+  });
+}
+async function rememberSession(email,key){
+  const database = await openSessionDatabase();
+  return new Promise((resolve,reject) => {
+    const transaction = database.transaction(SESSION_STORE,'readwrite');
+    transaction.objectStore(SESSION_STORE).put({email,key},'active');
+    transaction.oncomplete = () => {
+      database.close();
+      resolve();
+    };
+    transaction.onerror = () => {
+      database.close();
+      reject(transaction.error || new Error('Could not save the sign-in.'));
+    };
+    transaction.onabort = () => {
+      database.close();
+      reject(transaction.error || new Error('Could not save the sign-in.'));
+    };
+  });
+}
+async function forgetRememberedSession(){
+  const database = await openSessionDatabase();
+  return new Promise((resolve,reject) => {
+    const transaction = database.transaction(SESSION_STORE,'readwrite');
+    transaction.objectStore(SESSION_STORE).delete('active');
+    transaction.oncomplete = () => {
+      database.close();
+      resolve();
+    };
+    transaction.onerror = () => {
+      database.close();
+      reject(transaction.error || new Error('Could not clear the saved sign-in.'));
+    };
+    transaction.onabort = () => {
+      database.close();
+      reject(transaction.error || new Error('Could not clear the saved sign-in.'));
+    };
+  });
+}
+function readUsers(){
+  const saved = safeReadStorage(USERS_KEY);
+  if (!saved) return [];
+  let parsed;
+  try {
+    parsed = JSON.parse(saved);
+  } catch (error) {
+    throw new Error('Saved account data is invalid.');
+  }
+  if (!Array.isArray(parsed) || parsed.some(user =>
+    !user || typeof user.email !== 'string' || typeof user.name !== 'string' ||
+    typeof user.salt !== 'string' || typeof user.verifier !== 'string' ||
+    !Number.isInteger(user.iterations)
+  )) throw new Error('Saved account data is invalid.');
+  return parsed;
+}
+function normalizeNotes(parsed){
+  if (!Array.isArray(parsed) || parsed.some(note => !note || typeof note !== 'object')) throw new Error('Saved notes are invalid.');
+  return parsed.map(note => ({
+    ...note,
+    id: typeof note.id === 'string' ? note.id : Date.now().toString(36),
+    created: Number.isFinite(note.created) ? note.created : Date.now(),
+    pinned: !!note.pinned,
+    archived: !!note.archived,
+    color: COLORS.includes(note.color) ? note.color : 'none'
+  }));
+}
+async function derivePasswordKey(password,salt,purpose,iterations,usages){
+  if (!globalThis.crypto?.subtle) throw new Error('Password protection requires a browser with Web Crypto support. Open Smriti over HTTPS or use the installed app.');
+  const material = await crypto.subtle.importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveKey']);
+  const purposeSalt = new Uint8Array([...fromHex(salt), ...new TextEncoder().encode(purpose)]);
+  return crypto.subtle.deriveKey({name:'PBKDF2',hash:'SHA-256',salt:purposeSalt,iterations},material,{name:'AES-GCM',length:256},false,usages);
+}
+async function passwordVerifier(password,salt,iterations){
+  if (!globalThis.crypto?.subtle) throw new Error('Password protection requires a browser with Web Crypto support. Open Smriti over HTTPS or use the installed app.');
+  const material = await crypto.subtle.importKey('raw',new TextEncoder().encode(password),'PBKDF2',false,['deriveBits']);
+  const verifierSalt = new Uint8Array([...fromHex(salt),...new TextEncoder().encode('smriti-auth-v1')]);
+  const bits = await crypto.subtle.deriveBits({name:'PBKDF2',hash:'SHA-256',salt:verifierSalt,iterations},material,256);
+  return toHex(new Uint8Array(bits));
+}
+async function notesEncryptionKey(password,salt,iterations){
+  return derivePasswordKey(password,salt,'smriti-notes-v1',iterations,['encrypt','decrypt']);
+}
+async function encryptNotes(notes,key){
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const encrypted = await crypto.subtle.encrypt({name:'AES-GCM',iv},key,new TextEncoder().encode(JSON.stringify(notes)));
+  const bytes = new Uint8Array(encrypted);
+  let binary = '';
+  for (let offset=0;offset<bytes.length;offset+=0x8000) {
+    binary += String.fromCharCode(...bytes.subarray(offset,offset+0x8000));
+  }
+  return {version:1,iv:toHex(iv),data:btoa(binary)};
+}
+async function decryptNotes(blob,key){
+  if (!blob || blob.version !== 1 || typeof blob.data !== 'string') throw new Error('Saved notes are invalid.');
+  try {
+    const bytes = Uint8Array.from(atob(blob.data), character => character.charCodeAt(0));
+    const decrypted = await crypto.subtle.decrypt({name:'AES-GCM',iv:fromHex(blob.iv)},key,bytes);
+    return normalizeNotes(JSON.parse(new TextDecoder().decode(decrypted)));
+  } catch (error) {
+    throw new Error(`Could not decrypt this account's notes: ${error.message}`);
+  }
+}
+async function readNotes(account,key,migrateLegacy = false){
+  if (account.notes) return decryptNotes(account.notes,key);
+  let loaded = [];
+  let removeLegacy = false;
+  if (migrateLegacy) {
+    const legacy = safeReadStorage(KEY);
+    if (legacy !== null) {
+      try {
+        loaded = normalizeNotes(JSON.parse(legacy));
+        removeLegacy = true;
+      } catch (error) {
+        loaded = [];
+      }
+    }
+  }
+  account.notes = await encryptNotes(loaded,key);
+  persistUsers();
+  if (removeLegacy) localStorage.removeItem(KEY);
+  return loaded;
+}
+let users = [];
+let activeAccount = null;
 let notes = [];
-try { notes = JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) {}
-notes.forEach(n => { n.pinned = !!n.pinned; n.archived = !!n.archived; n.color = n.color || 'none'; });
+let startupAuthError = '';
+try {
+  users = readUsers();
+} catch (error) {
+  startupAuthError = error.message || 'Could not read saved account data.';
+}
+let notesCryptoKey = null;
+let rememberedSessionStored = false;
 let view = 'notes', editingId = null, draft = {}, alerting = null, loop = null;
 const baseTitle = document.title;
 const inAndroidApp = window.Capacitor?.getPlatform?.() === 'android';
@@ -233,8 +644,95 @@ let mobileAlarm = null;
 const mobileReady = inAndroidApp
   ? import('./mobile-bridge.js').then(() => window.SmritiMobile)
   : Promise.resolve(null);
-const save = () => { try { localStorage.setItem(KEY, JSON.stringify(notes)); } catch (e) { toast('Could not save in this browser.'); } };
+let saveSequence = 0;
+let pendingSave = Promise.resolve();
+const save = async () => {
+  if (!activeAccount || !notesCryptoKey) return;
+  const email = activeAccount.email;
+  const key = notesCryptoKey;
+  const sequence = ++saveSequence;
+  const snapshot = JSON.stringify(notes);
+  const operation = (async () => {
+    try {
+      const encrypted = await encryptNotes(JSON.parse(snapshot),key);
+      if (sequence === saveSequence && activeAccount?.email === email) {
+        const updatedUsers = users.map(user => user.email === email ? {...user,notes:encrypted} : user);
+        persistUsersWith(updatedUsers);
+        users = updatedUsers;
+        activeAccount = updatedUsers.find(user => user.email === email);
+      }
+    } catch (error) {
+      toast(`Could not save encrypted notes: ${error.message}`);
+    }
+  })();
+  pendingSave = operation;
+  await operation;
+};
 const find = id => notes.find(n => n.id === id);
+const applyTheme = name => {
+  const themeId = THEMES.some(t => t.id === name) ? name : 'light';
+  document.body.dataset.theme = themeId;
+  try { localStorage.setItem(THEME_KEY, themeId); } catch (e) {}
+  const picker = $('#themePicker');
+  if (picker) picker.value = themeId;
+};
+const renderThemePicker = () => {
+  let saved = 'light';
+  try { saved = localStorage.getItem(THEME_KEY) || saved; } catch (error) {}
+  const selected = document.body.dataset.theme || saved;
+  const picker = $('#themePicker');
+  picker.innerHTML = THEMES.map(theme => `<option value="${theme.id}">${theme.label}</option>`).join('');
+  picker.value = selected;
+  picker.onchange = () => applyTheme(picker.value);
+};
+const renderTemplatePicker = () => {
+  const select = $('#templateSelect');
+  if (!select) return;
+  select.innerHTML = '<option value="">Custom note</option>' + NOTE_TEMPLATES.map(template =>
+    `<option value="${template.id}">${template.label}</option>`
+  ).join('');
+  select.onchange = () => {
+    const template = NOTE_TEMPLATES.find(t => t.id === select.value);
+    if (!template) return;
+    if (template.title) $('#title').value = template.title;
+    $('#body').value = template.body;
+    $('#body').focus();
+    $('#body').selectionStart = $('#body').value.length;
+    $('#body').selectionEnd = $('#body').value.length;
+  };
+};
+function insertListMarker(marker){
+  const body = $('#body');
+  const value = body.value;
+  const start = body.selectionStart;
+  const end = body.selectionEnd;
+  if (start !== end) {
+    const lineStart = value.lastIndexOf('\n', start - 1) + 1;
+    const selectionEnd = end > start && value[end - 1] === '\n' ? end - 1 : end;
+    const lineEnd = value.indexOf('\n', selectionEnd);
+    const rangeEnd = lineEnd < 0 ? value.length : lineEnd;
+    const formatted = value.slice(lineStart, rangeEnd).split('\n')
+      .map(line => line.startsWith(marker) ? line : marker + line).join('\n');
+    body.value = value.slice(0, lineStart) + formatted + value.slice(rangeEnd);
+    body.setSelectionRange(lineStart, lineStart + formatted.length);
+  } else {
+    const lineStart = value.lastIndexOf('\n', start - 1) + 1;
+    const lineEndIndex = value.indexOf('\n', start);
+    const lineEnd = lineEndIndex < 0 ? value.length : lineEndIndex;
+    const line = value.slice(lineStart, lineEnd);
+    let insertion, cursor;
+    if (!line.trim()) {
+      insertion = marker;
+      cursor = start + marker.length;
+    } else {
+      insertion = `${start > lineStart ? '\n' : ''}${marker}`;
+      cursor = start + insertion.length;
+    }
+    body.value = value.slice(0, start) + insertion + value.slice(end);
+    body.setSelectionRange(cursor, cursor);
+  }
+  body.focus();
+}
 
 let tt; function toast(m){ const el=$('#toast'); el.textContent=m; el.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>el.classList.remove('show'),2400); }
 
@@ -273,6 +771,74 @@ function dayOf(ts){
   return diff===0?'Today':diff===1?'Tomorrow':diff===-1?'Yesterday':new Date(ts).toLocaleDateString([],{weekday:'short',month:'short',day:'numeric'});
 }
 
+/* ---------- press-and-hold text magnifier ---------- */
+const magnifier = $('#magnifier');
+let magnifierTimer = null, magnifierPointer = null, pressPoint = null;
+function wordAtPoint(x,y,target){
+  let node = null, offset = 0;
+  if (document.caretPositionFromPoint) {
+    const caret = document.caretPositionFromPoint(x,y);
+    if (caret) { node = caret.offsetNode; offset = caret.offset; }
+  } else if (document.caretRangeFromPoint) {
+    const caret = document.caretRangeFromPoint(x,y);
+    if (caret) { node = caret.startContainer; offset = caret.startOffset; }
+  }
+  if (node && node.nodeType === Node.TEXT_NODE) {
+    const text = node.textContent || '';
+    const words = [...text.matchAll(/\S+/gu)];
+    const word = words.find(match => offset >= match.index && offset <= match.index + match[0].length)
+      || words.reduce((closest, match) => !closest || Math.abs(match.index - offset) < Math.abs(closest.index - offset) ? match : closest, null);
+    if (word) return word[0];
+  }
+  return target.textContent.trim().split(/\s+/u)[0] || '';
+}
+function showMagnifier(x,y,target){
+  const word = wordAtPoint(x,y,target);
+  if (!word) return;
+  magnifier.textContent = word;
+  const left = Math.min(Math.max(8,x + 18), window.innerWidth - 132);
+  const top = Math.min(Math.max(8,y - 112), window.innerHeight - 104);
+  magnifier.style.left = `${left}px`;
+  magnifier.style.top = `${top}px`;
+  magnifier.classList.add('show');
+  document.body.classList.add('magnifying');
+}
+function hideMagnifier(){
+  clearTimeout(magnifierTimer);
+  magnifierTimer = null;
+  magnifierPointer = null;
+  pressPoint = null;
+  magnifier.classList.remove('show');
+  document.body.classList.remove('magnifying');
+}
+document.addEventListener('pointerdown', event => {
+  const target = event.target.closest('.note h3, .note p, .alert h2, .alert .txt');
+  if (!target || event.button !== 0) return;
+  clearTimeout(magnifierTimer);
+  magnifierPointer = event.pointerId;
+  pressPoint = {x:event.clientX,y:event.clientY,target};
+  if (target.setPointerCapture) target.setPointerCapture(event.pointerId);
+  const {x,y} = pressPoint;
+  magnifierTimer = setTimeout(() => showMagnifier(x,y,target), 450);
+});
+document.addEventListener('pointermove', event => {
+  if (magnifierPointer !== event.pointerId || !pressPoint) return;
+  if (magnifier.classList.contains('show')) {
+    showMagnifier(event.clientX,event.clientY,pressPoint.target);
+  } else if (Math.hypot(event.clientX-pressPoint.x,event.clientY-pressPoint.y) > 12) {
+    hideMagnifier();
+  }
+});
+document.addEventListener('pointerup', event => {
+  if (magnifierPointer === event.pointerId) hideMagnifier();
+});
+document.addEventListener('pointercancel', event => {
+  if (magnifierPointer === event.pointerId) hideMagnifier();
+});
+document.addEventListener('contextmenu', event => {
+  if (event.target.closest('.note h3, .note p, .alert h2, .alert .txt')) event.preventDefault();
+});
+
 /* ---------- cards ---------- */
 function card(n){
   const badge = n.remindAt ? `<span class="badge ${n.fired?'done':''}">${ic('bell')}${n.fired?'Reminded ':''}${dayOf(n.remindAt)}, ${timeOf(n.remindAt)}</span>` : '';
@@ -293,15 +859,19 @@ function empty(h,p){ return `<div class="empty"><h2>${h}</h2><p>${p}</p></div>`;
 function render(){
   const v = VIEWS[view], q = $('#search').value.trim().toLowerCase();
   $('#pgTitle').textContent = v.t; $('#pgSub').textContent = v.s; document.title = v.t + ' · Smriti';
+  const addLabel = view === 'reminders' ? 'Add reminder' : 'Add note';
+  $('#newBtn').innerHTML = ic('plus') + addLabel;
+  $('#fab').setAttribute('aria-label', addLabel);
   const match = n => !q || (n.title+' '+n.text).toLowerCase().includes(q);
   const live = notes.filter(n => !n.archived);
-  const counts = {notes:live.length, pinned:live.filter(n=>n.pinned).length, reminders:live.filter(n=>n.remindAt&&!n.fired).length, archive:notes.length-live.length};
+  const plainNotes = live.filter(n => !n.remindAt);
+  const counts = {notes:plainNotes.length, pinned:live.filter(n=>n.pinned).length, reminders:live.filter(n=>n.remindAt&&!n.fired).length, archive:notes.length-live.length};
   $('#nav').innerHTML = Object.entries(VIEWS).map(([k,x]) =>
     `<a href="#${k}" class="${k===view?'on':''}" ${k===view?'aria-current="page"':''}>${ic(x.i)}${x.t}${counts[k]?`<em>${counts[k]}</em>`:''}</a>`).join('');
 
   let html = '';
   if (view==='notes'){
-    const l = live.filter(match).sort((a,b)=>(b.pinned-a.pinned)||byNew(a,b));
+    const l = plainNotes.filter(match).sort((a,b)=>(b.pinned-a.pinned)||byNew(a,b));
     html = l.length ? `<div class="grid">${l.map(card).join('')}</div>` : empty(q?'Nothing found':'A quiet page', q?'Try a different word.':'Press New note to write your first one.');
   } else if (view==='pinned'){
     const l = live.filter(n=>n.pinned&&match(n)).sort(byNew);
@@ -335,7 +905,7 @@ $('#view').addEventListener('click', async e => {
   else if (b.dataset.a==='del'){
     if(!confirm('Delete this note for good?')) return;
     if (inAndroidApp) {
-      try { await (await mobileReady).alarm.cancel({id:n.id}); }
+      try { await (await mobileReady).alarm.cancel({id:accountAlarmId(n.id)}); }
       catch (error) { toast(`Could not cancel alarm: ${error.message}`); return; }
     }
     notes=notes.filter(x=>x!==n); toast('Note deleted.');
@@ -345,8 +915,341 @@ $('#view').addEventListener('click', async e => {
 
 /* ---------- composer ---------- */
 $('#dots').innerHTML = COLORS.map(c => `<button class="dot" data-c="${c}" style="--d:var(--c-${c})" aria-label="${c}"></button>`).join('');
-$('#newBtn').innerHTML = ic('plus') + 'New note'; $('#fab').innerHTML = ic('plus'); $('#srIcon').innerHTML = ic('search');
+const savedTheme = (() => { try { return localStorage.getItem(THEME_KEY) || 'light'; } catch (e) { return 'light'; } })();
+applyTheme(savedTheme);
+renderThemePicker();
+renderTemplatePicker();
+function setAuthMode(mode){
+  const creating = mode === 'signup';
+  $('#authForm').hidden = false;
+  $('#resetPasswordForm').hidden = true;
+  document.querySelector('.auth-tabs').hidden = false;
+  document.querySelector('.local-note').hidden = false;
+  $('#loginTab').setAttribute('aria-selected', String(!creating));
+  $('#signupTab').setAttribute('aria-selected', String(creating));
+  $('#authNameGroup').hidden = !creating;
+  $('#authConfirmGroup').hidden = !creating;
+  $('#authName').required = creating;
+  $('#authConfirm').required = creating;
+  $('#forgotPassword').hidden = creating;
+  $('#authPassword').autocomplete = creating ? 'new-password' : 'current-password';
+  $('#authSubmit').textContent = creating ? 'Create account' : 'Sign in';
+  $('#authMessage').textContent = '';
+  $('#authForm').dataset.mode = mode;
+}
+function showPasswordReset(){
+  const email = $('#authEmail').value;
+  $('#authForm').hidden = true;
+  document.querySelector('.auth-tabs').hidden = true;
+  document.querySelector('.local-note').hidden = true;
+  $('#resetPasswordForm').hidden = false;
+  $('#resetPasswordMessage').textContent = '';
+  $('#resetPasswordForm').reset();
+  $('#resetEmail').value = email;
+  $('#resetEmail').focus();
+}
+function showAuth(){
+  $('#app').hidden = true;
+  $('#authScreen').hidden = false;
+  $('#fab').hidden = true;
+  $('#composer').classList.remove('show');
+  $('#passwordOverlay').classList.remove('show');
+  if (startupAuthError) $('#authMessage').textContent = startupAuthError;
+  $('#authEmail').focus();
+}
+function randomSalt(){
+  if (!globalThis.crypto?.getRandomValues) throw new Error('Secure password support is unavailable in this browser.');
+  return Array.from(crypto.getRandomValues(new Uint8Array(16)), byte => byte.toString(16).padStart(2,'0')).join('');
+}
+function sameSecret(left,right){
+  if (left.length !== right.length) return false;
+  let difference = 0;
+  for (let i=0;i<left.length;i++) difference |= left.charCodeAt(i) ^ right.charCodeAt(i);
+  return difference === 0;
+}
+function persistUsers(){
+  persistUsersWith(users);
+}
+function persistUsersWith(nextUsers){
+  const written = safeWriteStorage(USERS_KEY, JSON.stringify(nextUsers));
+  if (!written) {
+    throw new Error('This browser cannot save your account data.');
+  }
+}
+async function activateAccount(account,key,migrateLegacy = false){
+  const accountNotes = await readNotes(account,key,migrateLegacy);
+  let rememberError = null;
+  try {
+    await rememberSession(account.email,key);
+    rememberedSessionStored = true;
+  } catch (error) {
+    rememberedSessionStored = false;
+    rememberError = error;
+  }
+  activeAccount = account;
+  notesCryptoKey = key;
+  notes = accountNotes;
+  saveSequence++;
+  $('#search').value = '';
+  $('#accountName').textContent = account.name;
+  $('#accountEmail').textContent = account.email;
+  $('#authScreen').hidden = true;
+  $('#app').hidden = false;
+  $('#fab').hidden = false;
+  renderThemePicker();
+  route();
+  if (rememberError) toast(`Could not keep you signed in: ${rememberError.message}`);
+  if (inAndroidApp) initializeMobileAlarms();
+  checkReminders();
+}
+async function signOut(){
+  await pendingSave;
+  if (rememberedSessionStored) {
+    try {
+      await forgetRememberedSession();
+    } catch (error) {
+      toast(`Could not clear saved sign-in: ${error.message}`);
+      return;
+    }
+    rememberedSessionStored = false;
+  }
+  stopAlert();
+  closeComposer();
+  mobileAlarm = null;
+  activeAccount = null;
+  notesCryptoKey = null;
+  notes = [];
+  saveSequence++;
+  $('#authForm').reset();
+  setAuthMode('login');
+  showAuth();
+}
+async function restoreRememberedSession(){
+  try {
+    const session = await readRememberedSession();
+    if (!session) return;
+    rememberedSessionStored = true;
+    if (typeof session.email !== 'string' || !session.key) {
+      throw new Error('Saved sign-in data is invalid.');
+    }
+    users = readUsers();
+    const account = users.find(user => user.email === session.email);
+    if (!account) throw new Error('The saved account could not be found on this device.');
+    await activateAccount(account,session.key,!!account.legacyImported);
+  } catch (error) {
+    if (rememberedSessionStored) {
+      try {
+        await forgetRememberedSession();
+        rememberedSessionStored = false;
+      } catch (clearError) {
+        startupAuthError = `Could not restore the saved sign-in: ${error.message} Could not clear saved sign-in: ${clearError.message}`;
+        showAuth();
+        return;
+      }
+    }
+    startupAuthError = `Could not restore the saved sign-in. Please sign in again. ${error.message}`;
+    showAuth();
+  }
+}
+$('#loginTab').onclick = () => setAuthMode('login');
+$('#signupTab').onclick = () => setAuthMode('signup');
+$('#forgotPassword').onclick = showPasswordReset;
+$('#cancelPasswordReset').onclick = () => {
+  setAuthMode('login');
+  $('#authEmail').focus();
+};
+$('#authForm').addEventListener('submit', async event => {
+  event.preventDefault();
+  const email = normalizeEmail($('#authEmail').value);
+  const password = $('#authPassword').value;
+  const creating = $('#authForm').dataset.mode === 'signup';
+  const message = $('#authMessage');
+  message.textContent = '';
+  if (creating && password.length < 8) {
+    message.textContent = 'Choose a password with at least 8 characters.';
+    return;
+  }
+  if (creating && password !== $('#authConfirm').value) {
+    message.textContent = 'The passwords do not match.';
+    return;
+  }
+  try {
+    users = readUsers();
+    if (creating) {
+      if (users.some(user => user.email === email)) {
+        message.textContent = 'An account with this email already exists. Sign in instead.';
+        return;
+      }
+      const salt = randomSalt();
+      const user = {
+        email,
+        name: $('#authName').value.trim(),
+        salt,
+        iterations: PASSWORD_ITERATIONS,
+        verifier: await passwordVerifier(password, salt, PASSWORD_ITERATIONS),
+        legacyImported: users.length === 0
+      };
+      const migrateLegacy = users.length === 0;
+      users.push(user);
+      persistUsers();
+      const key = await notesEncryptionKey(password,salt,PASSWORD_ITERATIONS);
+      await activateAccount(user,key,migrateLegacy);
+    } else {
+      const user = users.find(item => item.email === email);
+      if (!user) {
+        message.textContent = 'Email or password is incorrect.';
+        return;
+      }
+      const verifier = await passwordVerifier(password, user.salt, user.iterations);
+      if (!sameSecret(verifier, user.verifier)) {
+        message.textContent = 'Email or password is incorrect.';
+        return;
+      }
+      const key = await notesEncryptionKey(password,user.salt,user.iterations);
+      await activateAccount(user,key,!!user.legacyImported);
+    }
+    $('#authForm').reset();
+  } catch (error) {
+    message.textContent = error.message || 'Could not access this on-device account.';
+  }
+});
+$('#resetPasswordForm').addEventListener('submit', async event => {
+  event.preventDefault();
+  const email = normalizeEmail($('#resetEmail').value);
+  const newPassword = $('#resetNewPassword').value;
+  const message = $('#resetPasswordMessage');
+  message.textContent = '';
+  if (newPassword.length < 8) {
+    message.textContent = 'Choose a password with at least 8 characters.';
+    return;
+  }
+  if (newPassword !== $('#resetConfirmPassword').value) {
+    message.textContent = 'The passwords do not match.';
+    return;
+  }
+  if (!window.confirm('This permanently deletes all encrypted notes for this account. This cannot be undone. Continue?')) return;
+  try {
+    users = readUsers();
+    const user = users.find(item => item.email === email);
+    if (!user) {
+      message.textContent = 'No account was found for that email on this device.';
+      return;
+    }
+    const salt = randomSalt();
+    const key = await notesEncryptionKey(newPassword,salt,PASSWORD_ITERATIONS);
+    const updatedUser = {
+      ...user,
+      salt,
+      iterations:PASSWORD_ITERATIONS,
+      verifier:await passwordVerifier(newPassword,salt,PASSWORD_ITERATIONS),
+      notes:await encryptNotes([],key),
+      legacyImported:false
+    };
+    if (rememberedSessionStored) {
+      await forgetRememberedSession();
+      rememberedSessionStored = false;
+    }
+    if (inAndroidApp) {
+      const alarm = (await mobileReady).alarm;
+      const {reminders = []} = await alarm.getStates();
+      for (const reminder of reminders) {
+        if (reminder.id.startsWith(`${email}:`)) await alarm.cancel({id:reminder.id});
+      }
+    }
+    const updatedUsers = users.map(item => item.email === email ? updatedUser : item);
+    persistUsersWith(updatedUsers);
+    users = updatedUsers;
+    await activateAccount(updatedUser,key);
+    $('#resetPasswordForm').reset();
+    toast('Password reset. This account’s notes were deleted.');
+  } catch (error) {
+    message.textContent = error.message || 'Could not reset this account.';
+  }
+});
+$('#signOut').onclick = signOut;
+$('#changePassword').onclick = () => {
+  $('#passwordMessage').textContent = '';
+  $('#passwordForm').reset();
+  $('#passwordOverlay').classList.add('show');
+  $('#currentPassword').focus();
+};
+const closePasswordDialog = () => $('#passwordOverlay').classList.remove('show');
+$('#cancelPassword').onclick = closePasswordDialog;
+$('#passwordOverlay').addEventListener('mousedown', event => {
+  if (event.target.id === 'passwordOverlay') closePasswordDialog();
+});
+$('#passwordForm').addEventListener('submit', async event => {
+  event.preventDefault();
+  await pendingSave;
+  const message = $('#passwordMessage');
+  const currentPassword = $('#currentPassword').value;
+  const newPassword = $('#newPassword').value;
+  message.textContent = '';
+  if (newPassword.length < 8) {
+    message.textContent = 'Choose a password with at least 8 characters.';
+    return;
+  }
+  if (newPassword !== $('#confirmNewPassword').value) {
+    message.textContent = 'The new passwords do not match.';
+    return;
+  }
+  try {
+    users = readUsers();
+    const user = users.find(item => item.email === activeAccount.email);
+    if (!user) throw new Error('This account could not be found on this device.');
+    const verifier = await passwordVerifier(currentPassword, user.salt, user.iterations);
+    if (!sameSecret(verifier, user.verifier)) {
+      message.textContent = 'Current password is incorrect.';
+      return;
+    }
+    const salt = randomSalt();
+    const key = await notesEncryptionKey(newPassword,salt,PASSWORD_ITERATIONS);
+    const encryptedNotes = await encryptNotes(notes,key);
+    const updatedUser = {
+      ...user,
+      salt,
+      iterations:PASSWORD_ITERATIONS,
+      verifier:await passwordVerifier(newPassword,salt,PASSWORD_ITERATIONS),
+      notes:encryptedNotes
+    };
+    const updatedUsers = users.map(item => item.email === user.email ? updatedUser : item);
+    persistUsersWith(updatedUsers);
+    users = updatedUsers;
+    activeAccount = updatedUser;
+    notesCryptoKey = key;
+    let sessionUpdateWarning = '';
+    try {
+      await rememberSession(user.email,key);
+      rememberedSessionStored = true;
+    } catch (error) {
+      try {
+        await forgetRememberedSession();
+        rememberedSessionStored = false;
+        sessionUpdateWarning = `Password changed, but you may need to sign in again after closing Smriti: ${error.message}`;
+      } catch (clearError) {
+        sessionUpdateWarning = `Password changed, but the saved sign-in could not be updated or cleared: ${error.message} ${clearError.message}`;
+      }
+    }
+    closePasswordDialog();
+    toast(sessionUpdateWarning || 'Password changed.');
+  } catch (error) {
+    message.textContent = error.message || 'Could not change the password.';
+  }
+});
+setAuthMode('login');
+$('#fab').innerHTML = ic('plus'); $('#srIcon').innerHTML = ic('search');
 $('#newBtn').onclick = $('#fab').onclick = () => openComposer();
+$('#bulletList').onclick = () => insertListMarker('• ');
+$('#checklistList').onclick = () => insertListMarker('☐ ');
+$('#templateSelect').onchange = () => {
+  const template = NOTE_TEMPLATES.find(t => t.id === $('#templateSelect').value);
+  if (!template) return;
+  if (template.title) $('#title').value = template.title;
+  $('#body').value = template.body;
+  $('#body').focus();
+  $('#body').selectionStart = $('#body').value.length;
+  $('#body').selectionEnd = $('#body').value.length;
+};
 
 function paint(){
   document.querySelectorAll('.dot').forEach(d => d.classList.toggle('on', d.dataset.c===draft.color));
@@ -356,14 +1259,165 @@ function paint(){
 }
 function openComposer(id){
   const n = id && find(id); editingId = n ? n.id : null;
+  const reminderMode = view === 'reminders' || !!(n && n.remindAt);
   draft = n ? {color:n.color,pinned:n.pinned} : {color:'none',pinned:view==='pinned'};
   $('#title').value = n?n.title:''; $('#body').value = n?n.text:'';
+  $('#speechLanguage').value = speechLanguage;
+  $('#voiceStatus').textContent = '';
+  $('#templateSelect').value = '';
+  $('#reminderFields').hidden = !reminderMode;
   $('#when').value = n&&n.remindAt ? toLocalInput(new Date(n.remindAt)) : '';
   $('#sound').value = inAndroidApp ? (n&&n.sound==='silent'?'silent':'alarm') : n?n.sound||'chime':'alarm';
-  $('#save').textContent = n ? 'Update note' : 'Save note';
-  paint(); updateHint(); $('#composer').classList.add('show'); $('#body').focus();
+  $('#save').textContent = n ? (n.remindAt?'Update reminder':'Update note') : reminderMode?'Save reminder':'Save note';
+  if (reminderMode) updateHint();
+  paint(); $('#composer').classList.add('show'); $('#body').focus();
 }
-const closeComposer = () => $('#composer').classList.remove('show');
+let voiceRecognition = null;
+let voiceListeners = [];
+let speechLanguage = navigator.language || 'en-US';
+const VOICE_LANGUAGES = ['af-ZA','am-ET','ar-AE','ar-BH','ar-DZ','ar-EG','ar-IL','ar-IQ','ar-JO','ar-KW','ar-LB','ar-LY','ar-MA','ar-OM','ar-QA','ar-SA','ar-SY','ar-TN','ar-YE','as-IN','az-AZ','be-BY','bg-BG','bn-BD','bn-IN','bs-BA','ca-ES','cs-CZ','da-DK','de-AT','de-CH','de-DE','el-GR','en-AU','en-CA','en-GB','en-HK','en-IE','en-IN','en-NZ','en-PH','en-SG','en-US','en-ZA','es-AR','es-BO','es-CL','es-CO','es-CR','es-CU','es-DO','es-EC','es-ES','es-GT','es-HN','es-MX','es-NI','es-PA','es-PE','es-PR','es-PY','es-SV','es-US','es-UY','es-VE','et-EE','eu-ES','fa-IR','fi-FI','fil-PH','fr-BE','fr-CA','fr-CH','fr-FR','gl-ES','gu-IN','he-IL','hi-IN','hr-HR','hu-HU','hy-AM','id-ID','is-IS','it-IT','ja-JP','ka-GE','kk-KZ','km-KH','kn-IN','ko-KR','ky-KG','lo-LA','lt-LT','lv-LV','mk-MK','ml-IN','mn-MN','mr-IN','ms-MY','mt-MT','nb-NO','ne-NP','nl-BE','nl-NL','pa-IN','pl-PL','pt-BR','pt-PT','ro-RO','ru-RU','si-LK','sk-SK','sl-SI','sq-AL','sr-RS','sv-SE','sw-KE','ta-IN','te-IN','th-TH','tr-TR','uk-UA','ur-PK','uz-UZ','vi-VN','zh-CN','zh-HK','zh-TW'];
+function formatLanguageOption(code){
+  if (window.Intl && Intl.DisplayNames) {
+    try {
+      const label = new Intl.DisplayNames(['en'], {type:'language'}).of(code);
+      if (label) return `${label} (${code})`;
+    } catch (error) {}
+  }
+  return `${code.replace('-', ' ')} (${code})`;
+}
+function populateVoiceLanguages(){
+  const select = $('#speechLanguage');
+  const options = [...new Set([...VOICE_LANGUAGES, speechLanguage, navigator.language || 'en-US'])];
+  select.innerHTML = options.map(code => `<option value="${code}">${formatLanguageOption(code)}</option>`).join('');
+  const preferred = options.includes(speechLanguage) ? speechLanguage : (navigator.language || 'en-US');
+  select.value = preferred;
+  speechLanguage = preferred;
+}
+function setVoiceInputActive(active){
+  const button = $('#voiceInput');
+  button.classList.toggle('voice-active', active);
+  button.setAttribute('aria-pressed', String(active));
+  button.setAttribute('aria-label', active ? 'Stop voice input' : 'Start voice input');
+  button.title = active ? 'Stop voice input' : 'Start voice input';
+}
+function stopVoiceInput(){
+  if (!voiceRecognition) return;
+  if (voiceRecognition === 'android') {
+    mobileReady.then(bridge => bridge.voice.stopListening()).catch(error => {
+      const message = `Could not stop voice input: ${error.message}`;
+      $('#voiceStatus').textContent = message;
+      toast(message);
+    });
+    finishVoiceInput();
+    return;
+  }
+  voiceRecognition.stop();
+}
+function finishVoiceInput(){
+  voiceRecognition = null;
+  setVoiceInputActive(false);
+  voiceListeners.forEach(listener => listener.remove());
+  voiceListeners = [];
+}
+function appendVoiceTranscript(transcript){
+  if (!transcript) return;
+  const body = $('#body');
+  body.value += `${body.value && !/\s$/.test(body.value) ? ' ' : ''}${transcript}`;
+}
+$('#speechLanguage').addEventListener('change', e => {
+  speechLanguage = e.target.value.trim() || navigator.language || 'en-US';
+  e.target.value = speechLanguage;
+});
+populateVoiceLanguages();
+$('#voiceInput').onclick = async () => {
+  if (voiceRecognition) {
+    stopVoiceInput();
+    return;
+  }
+  if (inAndroidApp) {
+    try {
+      const bridge = await mobileReady;
+      voiceListeners = [
+        await bridge.voice.addListener('result', event => {
+          appendVoiceTranscript(event.transcript);
+          $('#voiceStatus').textContent = '';
+          finishVoiceInput();
+        }),
+        await bridge.voice.addListener('error', event => {
+          $('#voiceStatus').textContent = event.message;
+          toast(event.message);
+          finishVoiceInput();
+        })
+      ];
+      voiceRecognition = 'android';
+      setVoiceInputActive(true);
+      $('#voiceStatus').textContent = 'Listening…';
+      await bridge.voice.startListening({language: $('#speechLanguage').value.trim() || navigator.language || 'en-US'});
+    } catch (error) {
+      finishVoiceInput();
+      const message = error.message || 'Could not start Android voice input.';
+      $('#voiceStatus').textContent = message;
+      toast(message);
+    }
+    return;
+  }
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SpeechRecognition) {
+    $('#voiceStatus').textContent = 'Voice input is not supported by this browser.';
+    toast('Voice input is not supported by this browser.');
+    return;
+  }
+  let recognition;
+  try {
+    recognition = new SpeechRecognition();
+    recognition.lang = $('#speechLanguage').value.trim() || navigator.language || 'en-US';
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    voiceRecognition = recognition;
+    setVoiceInputActive(true);
+    $('#voiceStatus').textContent = 'Listening…';
+    recognition.onresult = event => {
+      let transcript = '';
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        if (event.results[i].isFinal) transcript += event.results[i][0].transcript;
+      }
+      if (transcript) {
+        appendVoiceTranscript(transcript);
+      }
+    };
+    recognition.onerror = event => {
+      if (event.error === 'aborted') return;
+      const messages = {
+        'not-allowed': 'Allow microphone access to use voice input.',
+        'service-not-allowed': 'The browser speech service is unavailable.',
+        'language-not-supported': 'This speech language is not supported by your browser.',
+        'no-speech': 'No speech was detected. Try again.',
+        network: 'The browser speech service could not connect. This can happen even when your internet works; try again or use Android voice input.'
+      };
+      const message = messages[event.error] || `Voice input failed (${event.error}).`;
+      $('#voiceStatus').textContent = message;
+      toast(message);
+      if (event.error === 'network') {
+        $('#voiceStatus').textContent = 'Browser speech recognition is unavailable. Use your keyboard’s microphone to dictate into the message.';
+        $('#body').focus();
+      }
+    };
+    recognition.onend = () => {
+      if (voiceRecognition !== recognition) return;
+      voiceRecognition = null;
+      setVoiceInputActive(false);
+      if ($('#voiceStatus').textContent === 'Listening…') $('#voiceStatus').textContent = '';
+    };
+    recognition.start();
+  } catch (error) {
+    voiceRecognition = null;
+    setVoiceInputActive(false);
+    const message = `Could not start voice input: ${error.message}`;
+    $('#voiceStatus').textContent = message;
+    toast(message);
+  }
+};
+const closeComposer = () => { stopVoiceInput(); $('#composer').classList.remove('show'); };
 $('#cancel').onclick = closeComposer;
 $('#composer').addEventListener('mousedown', e => { if (e.target.id==='composer') closeComposer(); });
 document.addEventListener('keydown', e => {
@@ -409,7 +1463,9 @@ async function prepareMobileAlarm(){
 $('#save').onclick = async () => {
   const title=$('#title').value.trim(), text=$('#body').value.trim(), w=$('#when').value;
   if (!title && !text){ toast('Write something first.'); return $('#body').focus(); }
-  const remindAt = w ? new Date(w).getTime() : null;
+  const reminderMode = !$('#reminderFields').hidden;
+  const remindAt = reminderMode && w ? new Date(w).getTime() : null;
+  if (reminderMode && !remindAt && !editingId) { toast('Choose a time for this reminder.'); $('#when').focus(); return; }
   if (remindAt && inAndroidApp) {
     try {
       if (!await prepareMobileAlarm()) return;
@@ -421,12 +1477,13 @@ $('#save').onclick = async () => {
   if (remindAt && !inAndroidApp) audio();
   if (remindAt && !inAndroidApp && 'Notification' in window && Notification.permission==='default') Notification.requestPermission().then(updateHint);
   const id = editingId || Date.now().toString(36);
+  const wasReminder = !!(editingId && find(editingId)?.remindAt);
   const data = {title,text,remindAt,sound:$('#sound').value,fired:false,color:draft.color,pinned:draft.pinned};
   try {
     if (inAndroidApp) {
       mobileAlarm = (await mobileReady).alarm;
-      if (remindAt) await mobileAlarm.schedule({id,title,body:text,at:remindAt,silent:data.sound==='silent'});
-      else if (editingId) await mobileAlarm.cancel({id});
+      if (remindAt) await mobileAlarm.schedule({id:accountAlarmId(id),title,body:text,at:remindAt,silent:data.sound==='silent'});
+      else if (editingId) await mobileAlarm.cancel({id:accountAlarmId(id)});
     }
   } catch (error) {
     toast(`Could not set alarm: ${error.message}`);
@@ -434,7 +1491,7 @@ $('#save').onclick = async () => {
   }
   if (editingId) Object.assign(find(editingId), data);
   else notes.unshift({id,created:Date.now(),archived:false,...data});
-  toast(editingId?'Note updated.':remindAt?`Saved. Reminder set for ${dayOf(remindAt).toLowerCase()}, ${timeOf(remindAt)}.`:'Note saved.');
+  toast(editingId ? (remindAt?'Reminder updated.':wasReminder?'Reminder removed. Note saved.':'Note updated.') : remindAt?`Saved. Reminder set for ${dayOf(remindAt).toLowerCase()}, ${timeOf(remindAt)}.`:'Note saved.');
   save(); closeComposer(); render();
 };
 
@@ -468,7 +1525,7 @@ function stopAlert(){
 $('#dismiss').onclick = async () => {
   if (!alerting) return;
   if (mobileAlarm) {
-    try { await mobileAlarm.dismiss({id:alerting.id}); }
+    try { await mobileAlarm.dismiss({id:accountAlarmId(alerting.id)}); }
     catch (error) { toast(`Could not stop alarm: ${error.message}`); return; }
   }
   alerting.fired = true;
@@ -484,7 +1541,7 @@ document.querySelectorAll('[data-snooze]').forEach(b => b.addEventListener('clic
   const mins = parseInt(b.dataset.snooze, 10) || 5;
   const remindAt = Date.now() + mins * 60000;
   if (mobileAlarm) {
-    try { await mobileAlarm.snooze({id:alerting.id,at:remindAt}); }
+    try { await mobileAlarm.snooze({id:accountAlarmId(alerting.id),at:remindAt}); }
     catch (error) { toast(`Could not snooze alarm: ${error.message}`); return; }
   }
   alerting.remindAt = remindAt;
@@ -510,6 +1567,7 @@ function notify(n){
 
 // Check for due reminders and fire them
 function checkReminders(){
+  if (!activeAccount) return;
   if (inAndroidApp) {
     if (mobileAlarm) syncMobileAlarmStates();
     return;
@@ -531,7 +1589,8 @@ async function syncMobileAlarmStates(){
     const result = await mobileAlarm.getStates();
     let changed = false;
     for (const state of result.reminders || []) {
-      const note = find(state.id);
+      if (!state.id.startsWith(accountAlarmPrefix())) continue;
+      const note = find(state.id.slice(accountAlarmPrefix().length));
       if (!note) {
         await mobileAlarm.cancel({id:state.id});
         continue;
@@ -558,17 +1617,38 @@ async function syncMobileAlarmStates(){
 }
 
 async function initializeMobileAlarms(){
-  if (!inAndroidApp) return;
+  if (!inAndroidApp || !activeAccount) return;
   try {
     const bridge = await mobileReady;
     mobileAlarm = bridge.alarm;
     $('#sound').innerHTML = '<option value="alarm">Phone alarm sound (repeats)</option><option value="silent">Silent</option>';
     $('#preview').hidden = true;
     const { reminders = [] } = await mobileAlarm.getStates();
-    const states = new Map(reminders.map(item => [item.id, item]));
+    if (activeAccount.legacyImported) {
+      for (const state of reminders) {
+        if (state.id.includes(':')) continue;
+        const note = find(state.id);
+        if (!note) continue;
+        if (state.state === 'dismissed') note.fired = true;
+        else if (state.state === 'scheduled') {
+          note.remindAt = state.at;
+          note.fired = false;
+        } else if (state.state === 'ringing') {
+          note.fired = true;
+          if (!alerting) fire(note);
+        }
+        await mobileAlarm.cancel({id:state.id});
+      }
+      activeAccount.legacyImported = false;
+      users = users.map(user => user.email === activeAccount.email ? activeAccount : user);
+      persistUsers();
+      save();
+    }
+    const accountReminders = reminders.filter(item => item.id.startsWith(accountAlarmPrefix()));
+    const states = new Map(accountReminders.map(item => [item.id, item]));
     let changed = false;
     for (const note of notes) {
-      const state = states.get(note.id);
+      const state = states.get(accountAlarmId(note.id));
       if (state?.state === 'dismissed') {
         if (!note.fired) { note.fired = true; changed = true; }
       } else if (state?.state === 'ringing') {
@@ -584,7 +1664,7 @@ async function initializeMobileAlarms(){
     const exact = await mobileAlarm.checkExactAlarmPermission();
     for (const note of notes) {
       if (!note.remindAt || note.fired) continue;
-      const state = states.get(note.id);
+      const state = states.get(accountAlarmId(note.id));
       if (state?.state === 'ringing' || state?.state === 'dismissed') continue;
       if (!exact.granted) {
         toast('Enable Alarms & reminders for Smriti to restore pending alarms.');
@@ -592,7 +1672,7 @@ async function initializeMobileAlarms(){
       }
       if (!state || state.at !== note.remindAt) {
         await mobileAlarm.schedule({
-          id:note.id,title:note.title || 'Smriti reminder',body:note.text || '',
+          id:accountAlarmId(note.id),title:note.title || 'Smriti reminder',body:note.text || '',
           at:note.remindAt,silent:note.sound === 'silent'
         });
       }
@@ -604,8 +1684,11 @@ async function initializeMobileAlarms(){
 }
 
 // Start the reminder checker (run on load and then every 5 seconds)
-route();
-if (inAndroidApp) initializeMobileAlarms();
+showAuth();
+$('#authSubmit').disabled = true;
+restoreRememberedSession().finally(() => {
+  if (!activeAccount) $('#authSubmit').disabled = false;
+});
 setInterval(checkReminders, 5000);
 checkReminders();
 </script>

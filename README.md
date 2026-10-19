@@ -19,6 +19,25 @@ The hosted website saves notes in that visitor's browser and can alert them
 while the page is open. Browsers do not run a ringing alarm after the website
 is closed; closed-app alarms require installing the Android app below.
 
+## On-device accounts
+
+Smriti supports multiple accounts on the same browser or installed app. Each
+account has its own password and notes; notes are encrypted on the device and
+the first account can adopt notes already saved by an older version. Accounts
+do not sync between browsers or devices. A forgotten password can be reset
+from the sign-in screen, but doing so permanently deletes that account's
+encrypted notes. This is local account protection, not server-backed
+authentication.
+
+## Voice input
+
+Use the microphone in the note composer to dictate into the message. The
+language field defaults to the device language and accepts a language tag such
+as `en-US`; the selected browser or Android speech service must support that
+language. The Android app uses Android's speech service and prefers an
+installed offline language pack. The website uses the browser's speech service,
+which may need its own network connection even when the device is online.
+
 ## Build and install
 
 1. Install Node.js 22 or newer and Android Studio.

@@ -7,7 +7,26 @@
 // NOTES DATA
 // ==========================================
 
-let notes = JSON.parse(localStorage.getItem("smritiNotes"));
+function readStoredNotes() {
+    try {
+        const storedValue =
+            localStorage.getItem("smritiNotes");
+
+        if (storedValue === null) {
+            return null;
+        }
+
+        const parsedValue = JSON.parse(storedValue);
+
+        return Array.isArray(parsedValue)
+            ? parsedValue
+            : null;
+    } catch (error) {
+        return null;
+    }
+}
+
+let notes = readStoredNotes();
 
 if (!Array.isArray(notes) || notes.length === 0) {
 
